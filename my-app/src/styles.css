@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
+WeatherApp {
+  font-family: Quicksand;
+  padding: 5px;
+}
+
+button {
+  margin-right: 5px;
+}
+
+.btn_section,
+.search_section,
+.info_section {
+  border: lightgray 1px solid;
+  margin: 5px 25%;
+  padding: 10px;
+}
+
+.cityButtons {
+  font-family: Quicksand;
+  font-weight: bold;
+  margin-right: 5px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+input {
+  font-family: Quicksand;
+  margin-right: 5px;
+  height: 20px;
+  width: 100px;
+}
+
+.error {
+  font-family: Quicksand;
+
+  background-color: lightpink;
+}
+
+table {
+  font-family: Quicksand;
+
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: lightgrey 1px;
+  text-align: left;
+  padding: 8px;
+  width: 50px;
+}
