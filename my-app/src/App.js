@@ -5,25 +5,13 @@ import { useEffect } from "react";
 export default function WeatherApp() {
   // City Buttons
   const [cities, setNewCity] = useState([
-    <button
-      className="cityButtons"
-      key={0}
-      onClick={() => displayWeather(30.27, -97.74)}
-    >
+    <button className="cityButtons" key={0} onClick={() => displayWeather(30.27, -97.74)}>
       Austin
     </button>,
-    <button
-      className="cityButtons"
-      key={1}
-      onClick={() => displayWeather(32.77, -96.8)}
-    >
+    <button className="cityButtons" key={1} onClick={() => displayWeather(32.77, -96.8)}>
       Dallas
     </button>,
-    <button
-      className="cityButtons"
-      key={2}
-      onClick={() => displayWeather(29.76, -95.36)}
-    >
+    <button className="cityButtons" key={2} onClick={() => displayWeather(29.76, -95.36)}>
       Houston
     </button>
   ]);
@@ -40,25 +28,24 @@ export default function WeatherApp() {
 
   function displayWeather(lat, long) {
     const json_info = fetchAPIData(
-      "https://api.open-meteo.com/v1/forecast?latitude=" +
-        lat +
-        "&longitude=" +
-        long +
-        "&hourly=temperature_2m"
+      "https://api.open-meteo.com/v1/forecast?" + 
+      "latitude=" + lat +
+      "&longitude=" + long +
+      "&hourly=temperature_2m"
     );
 
     json_info.then(function (json) {
       json.hourly.time.slice(0, 12);
       json.hourly.temperature_2m.slice(0, 12);
       setWeatherInfo(
-        <div>
-          <table>
+        <div><table>
             <thead>
               <tr>
                 <th>Time</th>
                 <th>Temperature</th>
               </tr>
             </thead>
+        
             <tbody>
               {json.hourly.time.map((time, idx) => (
                 <tr key={time}>
@@ -69,8 +56,7 @@ export default function WeatherApp() {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+        </table></div>
       );
     });
   }
